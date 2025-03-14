@@ -8,7 +8,6 @@ const inquirer = require("inquirer");
 console.log(chalk.blue("🚀 Generating bullet-proof Next.js project"));
 
 async function main() {
-	// Ask for project name
 	const { projectName } = await inquirer.prompt([
 		{
 			type: "input",
@@ -21,7 +20,6 @@ async function main() {
 	const templatePath = path.join(__dirname, "../main-app/");
 	const targetPath = path.resolve(process.cwd(), projectName);
 
-	// Check if directory exists
 	if (fs.existsSync(targetPath)) {
 		const { overwrite } = await inquirer.prompt([
 			{

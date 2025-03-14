@@ -9,7 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
+/cli/
 # testing
 /coverage
 
@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+/cli/
+cli
+/cli/cli.js/
+cli
 # production
 /build
 

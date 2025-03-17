@@ -1,11 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from "axios";
-import { refreshToken } from "./refreshTokenService";
-import { useApiErrorHandler } from "../hooks/useApiErrorHandler";
 import { getCookie } from "cookies-next";
 import apiConfig from "@/config/services/api-config";
+import { useApiErrorHandler } from "@/lib/useApiErrorHandler";
 
 let instance: AxiosInstance | null = null;
-let isRefreshing = false;
 
 type FailedRequest = {
   resolve: (token: string | null) => void;
@@ -68,39 +66,8 @@ export const Http = {
         };
 
         if (error.response?.status === 401 && !originalRequest._retry) {
-          if (isRefreshing) {
-            return new Promise<string | null>((resolve, reject) => {
-              failedQueue.push({ resolve, reject });
-            })
-              .then((token) => {
-                if (token)
-                  originalRequest.headers!["Authorization"] = `Bearer ${token}`;
-                return instance!(originalRequest);
-              })
-              .catch((err) => Promise.reject(err));
-          }
-
-          originalRequest._retry = true;
-          isRefreshing = true;
-
-          try {
-            const newToken = await refreshToken();
-            if (newToken) {
-              instance!.defaults.headers.common["Authorization"] =
-                `Bearer ${newToken}`;
-              originalRequest.headers!["Authorization"] = `Bearer ${newToken}`;
-              processQueue(null, newToken);
-              return instance!(originalRequest);
-            } else {
-              processQueue(new Error("Refresh token failed"));
-              return Promise.reject(error);
-            }
-          } catch (refreshError) {
-            processQueue(refreshError);
-            return Promise.reject(refreshError);
-          } finally {
-            isRefreshing = false;
-          }
+          processQueue(new Error("Unauthorized"));
+          return Promise.reject(error);
         }
 
         handleError(error);

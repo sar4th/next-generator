@@ -1,0 +1,21 @@
+export const dummySchema = {
+  fields: {
+    id: "id",
+    name: "name",
+    cellPhone: "cellPhone",
+    phone: "phone",
+    email: "email",
+    logo: "logo",
+    address: "address",
+    city: "city",
+    state: "state",
+    zip: "zip",
+    contactName: "contactName",
+    dbaName: "dbaName",
+    taxId: "taxId",
+    stateId: "stateId",
+    statusId: "statusId",
+    status: "status",
+    user: "user",
+  },
+};

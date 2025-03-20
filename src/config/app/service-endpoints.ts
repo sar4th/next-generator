@@ -1,3 +1,3 @@
 export const ServiceEndPoints = {
-  dummyEndPoint: "Dummy/test",
+  dummyEndPoint: 'Dummy/test',
 };

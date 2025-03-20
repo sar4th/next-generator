@@ -3,8 +3,7 @@ import {
     ErrorResponse,
     ToastOptions,
     ToastType
-} from '../types/types';
-import { showToast } from '../utils/defaultToastOptions';
+} from '../types/global';
 
 export function useApiErrorHandler() {
     const displayToast = (
@@ -12,7 +11,7 @@ export function useApiErrorHandler() {
         message: string,
         options: ToastOptions
     ) => {
-        showToast(type, message, options);
+        console.log(message);
     };
 
     const handleError = (error: unknown) => {

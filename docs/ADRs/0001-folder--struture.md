@@ -4,12 +4,12 @@ This project is a scalable and modular Next.js boilerplate designed for producti
 
 ## Features
 
-- **Modular Folder Structure**: Organized for easy feature-based scaling.
-- **TypeScript Support**: Ensuring type safety across the project.
-- **ESLint & Prettier**: Enforced coding standards.
-- **API Handling**: Custom hooks for API error and success handling.
-- **State Management**: Designed to support React Query or any other state management solution.
-- **CLI Tool**: For quickly generating a new project with this structure.
+-   **Modular Folder Structure**: Organized for easy feature-based scaling.
+-   **TypeScript Support**: Ensuring type safety across the project.
+-   **ESLint & Prettier**: Enforced coding standards.
+-   **API Handling**: Custom hooks for API error and success handling.
+-   **State Management**: Designed to support React Query or any other state management solution.
+-   **CLI Tool**: For quickly generating a new project with this structure.
 
 ## Folder Structure
 
@@ -62,8 +62,8 @@ BULLET-PROOF-NEXT/
 
 ### Prerequisites
 
-- Node.js (Latest LTS recommended)
-- PNPM (Recommended) or NPM/Yarn
+-   Node.js (Latest LTS recommended)
+-   PNPM (Recommended) or NPM/Yarn
 
 ### Installation
 
@@ -84,9 +84,9 @@ npx generate-bullet-proof-next my-app
 
 Options:
 
-- `--no-eslint` → Disable ESLint
-- `--no-api` → Exclude API handlers
-- `--state <store>` → Choose a state management tool (redux, zustand, recoil)
+-   `--no-eslint` → Disable ESLint
+-   `--no-api` → Exclude API handlers
+-   `--state <store>` → Choose a state management tool (redux, zustand, recoil)
 
 ## Contributing
 

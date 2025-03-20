@@ -3,7 +3,7 @@ import {
     ErrorResponse,
     ToastOptions,
     ToastType
-} from '../types/types';
+} from '../types/global';
 import { showToast } from '../utils/defaultToastOptions';
 
 export function useApiSuccessHandler() {

@@ -8,6 +8,8 @@
     "start": "npx serve@latest out",
     "lint": "npm eslint .",
     "test": "jest",
+    "e2e": "npx playwright test --headed",
+    "test:all": "npm run test && npm run e2e",
     "prepare": "husky"
   },
   "bin": {
